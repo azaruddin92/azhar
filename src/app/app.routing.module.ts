@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'inventory', component: InventoryComponent},
-   {path: '**', component: PagenotfoundComponent},
+   {path: '**', component: PagenotfoundComponent}, 
 
   
 ];
