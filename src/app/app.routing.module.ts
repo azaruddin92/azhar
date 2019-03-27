@@ -7,7 +7,7 @@ import {DashboardComponent}   from './dashboard/dashboard.component';
 import {InventoryComponent}   from './inventory/inventory.component';
 import {PagenotfoundComponent}   from './pagenotfound/pagenotfound.component';
  
-
+ 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'registration', component: RegistrationComponent},
