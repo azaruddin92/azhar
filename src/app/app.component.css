@@ -1,0 +1,89 @@
+p {
+  font-family: Lato;
+}
+
+ul.nav.nav-pills {
+    float: left;
+    width: 100%;
+}
+
+ul.nav.nav-pills li {
+    float: left;
+    padding: 10px;
+    list-style-type: none;
+}
+
+html, body {
+  background-color: #f1f1f1 !important;
+}
+.nav-pills>li {
+    float: left;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+    
+}
+.panel {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  border: none;
+  background: #fff;
+}
+.min_height{
+  min-height: 400px;
+}
+header,footer {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+  background: #1976D2;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+footer{
+  position: relative;
+  bottom:-100px;
+}
+table {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  background: #ffffff;
+}
+
+label {
+  font-weight: 500;
+}
+
+.form-header {
+  background: #1976D2;
+  color: #ffffff;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #337ab7;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active{
+ background-color: #337ab7;
+}
+
+.container {
+    margin: 0px auto;
+    width: 50%;
+}
+
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+.custom-select.is-invalid~.invalid-feedback, .custom-select.is-invalid~.invalid-tooltip, .form-control.is-invalid~.invalid-feedback, .form-control.is-invalid~.invalid-tooltip, .was-validated .custom-select:invalid~.invalid-feedback, .was-validated .custom-select:invalid~.invalid-tooltip, .was-validated .form-control:invalid~.invalid-feedback, .was-validated .form-control:invalid~.invalid-tooltip {
+    display: block;
+}
+.invalid-feedback {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 88%;
+    color: #dc3545;
+}
+.invalid-feedback {
+    color: red;
+}

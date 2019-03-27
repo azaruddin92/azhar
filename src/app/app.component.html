@@ -1,0 +1,36 @@
+  <div class="container min_height">
+<header>
+  <h4 style="margin: 0;display: inline-block;vertical-align: sub;margin-left: 5px"> {{name}}
+  </h4> 
+</header>
+
+
+  <ul class="nav nav-pills" style="margin-bottom: 20px;">
+    <li  *ngIf="is_loggedin"  role="presentation" routerLinkActive="active">
+      <a href="#"  routerLink="/dashboard">Dashboard</a></li>
+    <li *ngIf="!is_loggedin" role="presentation" routerLinkActive="active">
+      <a href="#"  routerLink="/login">Login</a></li>
+    <li *ngIf="!is_loggedin" role="presentation" routerLinkActive="active">
+      <a href="#"  routerLink="/registration">Registration</a></li>
+
+       <li *ngIf="is_loggedin" role="presentation" routerLinkActive="active">
+      <a href="#" (click)="Logoutfunc()">Logout</a></li>
+  </ul>
+  <p *ngIf="is_loggedin">You are loggedin!<b> {{username}}</b></p>
+<div>
+  <router-outlet></router-outlet>
+ </div>
+</div>
+<div class="container">
+ <footer>
+  <h4 style="margin: 0;display: inline-block;vertical-align: sub;margin-left: 5px"> {{copyright}}
+  </h4>
+</footer>
+</div>
+
+<div>
+
+</div>
+
+
+
