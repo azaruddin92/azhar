@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms'; //validation
-import datalist  from '../assets/listdata.json';
+//import datalist  from '../assets/listdata.json';
 import {Router} from '@angular/router';
 import { AuthserviceService } from '../authservice.service';
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
  /* validation */
 loginform: FormGroup;
 submitted = false;
-datalist:any=datalist;
+//datalist:any=datalist;
   
   
 /* validation  private formBuilder: FormBuilder*/
@@ -27,7 +27,7 @@ datalist:any=datalist;
         });
    }
  // convenience getter for easy access to form fields
-    get f() { return this.loginform.controls; }
+    get func() { return this.loginform.controls; }
     onSubmit() {
         this.submitted = true;
 
@@ -38,44 +38,13 @@ datalist:any=datalist;
         {
           var email =this.loginform.value.email;
           var password =this.loginform.value.password;  
-
-          /*       
-          var flag=0;
-          var j=0;                 
-
-          for(j=0;j<datalist.length;j++)
-          {           
-            if((datalist[j].Email==email) && (datalist[j].Password==password))
-            {
-              this.authserviceService.loginfunc(datalist[j].Email,datalist[j].Username);
-            
-              flag=1;             
-              break;           
-            }else {             
-              flag=0;               
-             }
-          }          
-          
-          if(flag==1)
-          {             
-              alert('successfully login!');                 
-              this.router.navigate(['/dashboard']);
-             
-                           
-          }else
-          { 
-              alert('Invalid credential!');    
-              this.router.navigate(['/login']);           
-          } 
-          */
+  
     
     var output = this.authserviceService.check_username_password(email, password);
     if(output == true)
-    {
-      //console.log('Loggedin');
+    {      
       alert('successfully login!');   
-      this.router.navigate(['/dashboard']);
-      
+      this.router.navigate(['/dashboard']);      
     }
     else{
        alert('Invalid credential!');    
@@ -83,11 +52,7 @@ datalist:any=datalist;
      
     }
   }
-
-
-
            
 }
-/* validation */
 
 }
