@@ -7,6 +7,7 @@ import {DashboardComponent}   from './dashboard/dashboard.component';
 import {InventoryComponent}   from './inventory/inventory.component';
 import {PagenotfoundComponent}   from './pagenotfound/pagenotfound.component';
 import {AuthGuardGuard}   from './auth-guard.guard';
+
  
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},

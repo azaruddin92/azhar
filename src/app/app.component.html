@@ -6,14 +6,14 @@
 
 
   <ul class="nav nav-pills" style="margin-bottom: 20px;">
-    <li  *ngIf="is_loggedin"  role="presentation" routerLinkActive="active">
+    <li  *ngIf="authserviceService.check_user_loggedin()"  role="presentation" routerLinkActive="active">
       <a href="#"  routerLink="/dashboard">Dashboard</a></li>
-    <li *ngIf="!is_loggedin" role="presentation" routerLinkActive="active">
+    <li *ngIf="!authserviceService.check_user_loggedin()" role="presentation" routerLinkActive="active">
       <a href="#"  routerLink="/login">Login</a></li>
-    <li *ngIf="!is_loggedin" role="presentation" routerLinkActive="active">
+    <li *ngIf="!authserviceService.check_user_loggedin()" role="presentation" routerLinkActive="active">
       <a href="#"  routerLink="/registration">Registration</a></li>
 
-       <li *ngIf="is_loggedin" role="presentation" routerLinkActive="active">
+       <li *ngIf="authserviceService.check_user_loggedin()" role="presentation" routerLinkActive="active">
       <a href="#" (click)="Logoutfunc()">Logout</a></li>
   </ul>
   <p *ngIf="is_loggedin">You are loggedin!<b> {{username}}</b></p>

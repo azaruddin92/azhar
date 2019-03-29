@@ -34,6 +34,17 @@ export class AuthserviceService {
         return false;
       }
   }
+  check_user_loggedin()
+  {
+  if(localStorage.getItem('email'))
+  {
+   return true;
+  }else
+  {
+   return false;
+  }
+
+  }
 
     
    
