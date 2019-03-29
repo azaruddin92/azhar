@@ -22,8 +22,6 @@ constructor(private _authService: AuthserviceService, private _router: Router) {
           return false;
       }
 
-
-
   }
 
   
