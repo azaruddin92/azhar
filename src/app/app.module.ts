@@ -11,9 +11,10 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { AuthserviceService } from './authservice.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {AuthGuardGuard}   from './auth-guard.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule, ],
+  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpClientModule ],
   declarations: [ AppComponent,  RegistrationComponent, LoginComponent, DashboardComponent, InventoryComponent, PagenotfoundComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AuthserviceService,AuthGuardGuard]
