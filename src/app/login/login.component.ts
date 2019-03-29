@@ -39,36 +39,31 @@ checkmessage : string;
             return;
         }else
         {
-          //var email =this.loginform.value.email;
-          //var password =this.loginform.value.password;  
-          var formsdata=this.loginform.value;
-  
-    /*
-    var output = this.authserviceService.check_username_password(email, password);
-    if(output == true)
-    {      
-      alert('successfully login!');   
-      this.router.navigate(['/dashboard']);      
-    }
-    else{
-       alert('Invalid credential!');    
-       this.router.navigate(['/login']);     
-     
-    }
-    */
+         //var email =this.loginform.value.email;
+         //var password =this.loginform.value.password;  
+         var formsdata=this.loginform.value;      
+        /*
+        var output = this.authserviceService.check_username_password(email, password);
+        if(output == true)
+        {      
+          alert('successfully login!');   
+          this.router.navigate(['/dashboard']);      
+        }
+        else{
+          alert('Invalid credential!');    
+          this.router.navigate(['/login']);           
+        }
+        */
       this.authserviceService.checkAuthentication(formsdata).subscribe( response =>
           {
                if(response){
-                this.checkLogin = true;
-                this.router.navigate(['/dashboard']);
+                  this.checkLogin = true;
+                  this.router.navigate(['/dashboard']);
                }else{
                   this.checkerror=true;
-                  this.checkmessage='Please check your email and password';
+                  this.checkmessage='Invalid Credential !';
                }
-            }
-      );
-
-
+          });
         }
     }
 }

@@ -9,23 +9,15 @@ import {Router} from '@angular/router';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
- name = 'Lemosys Web Developers';
- copyright = '@ 2019 Azhar';
-public is_loggedin: any;
-public  email=''; 
+  name = 'Lemosys Web Developers';
+  copyright = '@ 2019 Azhar';
+  
 
   
-constructor(private authserviceService:AuthserviceService,private _router:Router) { 
+constructor(private authserviceService:AuthserviceService) { 
 
   }
    ngOnInit() {
    }
-
-    Logoutfunc()
-   {
-     this.authserviceService.mainLogoutfunc();  
-     this.is_loggedin=false;
-     this._router.navigate(['/login']);
-   }
-  
+    
 }

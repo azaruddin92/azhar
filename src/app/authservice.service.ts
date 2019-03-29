@@ -7,16 +7,17 @@ import { map } from 'rxjs/operators';
 export class AuthserviceService {
 private serviceurl = 'https://angular.cppatidar.com/angular/webservice/webservice.php';
 
- is_login:boolean;
-  constructor(private http: HttpClient) { }
+is_login:boolean;
+constructor(private http: HttpClient) { }
 
- mainLogoutfunc()
+mainLogoutfunc()
    {  
       localStorage.removeItem('email');
+      localStorage.removeItem('username');
       localStorage.clear();
    }
- /*
-  check_username_password(email: string, password : string)
+
+ /* check_username_password(email: string, password : string)
   {
       if(email == "test1@gmail.com" && password =="123456"){
       localStorage.setItem('email',email);
@@ -28,7 +29,8 @@ private serviceurl = 'https://angular.cppatidar.com/angular/webservice/webservic
       }
   }
   */
-  check_user_loggedin()
+
+check_user_loggedin()
   {
       if(localStorage.getItem('email'))
       {
@@ -46,14 +48,15 @@ checkAuthentication(postingdata: any): Observable<any> {
    return this.http.post<any>(this.serviceurl,parameter).pipe(
         map(response => {      
           if (response && response.status==true) {
-            localStorage.setItem('username', response.data.username);
-            console.log(response.data.username);
-            console.log(response.data.email);
-            localStorage.setItem('is_login', true);            
-            localStorage.setItem('email', response.data.email);                
+            localStorage.setItem('email', response.data.email);    
+            localStorage.setItem('username', response.data.username);          
+            localStorage.setItem('is_login', true);    
             return true;
+          }else
+          {
+            return false;
           }
-          return false;
+          
         })
     );
    } 
