@@ -18,8 +18,7 @@ export class AuthserviceService {
    {
       localStorage.setItem('is_login',true);
       localStorage.setItem('email',email);
-      localStorage.setItem('username',username);
-     
+      localStorage.setItem('username',username);     
    }
    */
 
