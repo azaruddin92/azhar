@@ -6,15 +6,15 @@ import {LoginComponent}   from './login/login.component';
 import {DashboardComponent}   from './dashboard/dashboard.component';
 import {InventoryComponent}   from './inventory/inventory.component';
 import {PagenotfoundComponent}   from './pagenotfound/pagenotfound.component';
- 
+import {AuthGuardGuard}   from './auth-guard.guard';
  
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate : [AuthGuardGuard]},
   {path: 'inventory', component: InventoryComponent},
-   {path: '**', component: PagenotfoundComponent}, 
+  {path: '**', component: PagenotfoundComponent}, 
 
   
 ];

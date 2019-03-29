@@ -13,6 +13,7 @@ export class AuthserviceService {
     localStorage.clear();
 
    }
+   /*
    loginfunc(email,username)
    {
       localStorage.setItem('is_login',true);
@@ -20,6 +21,19 @@ export class AuthserviceService {
       localStorage.setItem('username',username);
      
    }
+   */
+
+  check_username_password(email: string, password : string)
+  {
+      if(email == "test1@gmail.com" && password =="123456"){
+      localStorage.setItem('email',email);
+      localStorage.setItem('is_login',true);
+      return true;
+      }
+      else{
+        return false;
+      }
+  }
 
     
    

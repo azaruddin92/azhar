@@ -37,7 +37,9 @@ datalist:any=datalist;
         }else
         {
           var email =this.loginform.value.email;
-          var password =this.loginform.value.password;         
+          var password =this.loginform.value.password;  
+
+          /*       
           var flag=0;
           var j=0;                 
 
@@ -64,8 +66,23 @@ datalist:any=datalist;
           { 
               alert('Invalid credential!');    
               this.router.navigate(['/login']);           
-          }                
-        }      
+          } 
+          */
+    
+    var output = this.authserviceService.check_username_password(email, password);
+    if(output == true)
+    {
+      console.log('Loggedin');
+      this.router.navigate(['/dashboard']);
+    }
+    else{
+      console.log('Invalid username or password');
+    }
+  }
+
+
+
+           
 }
 /* validation */
 

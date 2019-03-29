@@ -13,13 +13,26 @@ constructor(private _authService: AuthserviceService, private _router: Router) {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
    // return true;
-    if (this._authService.isAuthenticated()) {
+   /* if (this._authService.isAuthenticated()) {
         return true;
     }
+    */
      // navigate to login page
-    this._router.navigate(['/login']);
+   // this._router.navigate(['/login']);
     // you can save redirect url so after authing we can move them back to the page they requested
-    return false;
+    //return false;
+    if(localStorage.getItem('email')!= null){
+        return true;
+      }
+      else
+      {
+        this.routes.navigate(['/login']);
+        return false;
+      }
+
+
+
+
   }
 
   

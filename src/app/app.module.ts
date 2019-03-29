@@ -10,12 +10,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { AuthserviceService } from './authservice.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import {AuthGuardGuard}   from './auth-guard.guard';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule, ],
   declarations: [ AppComponent,  RegistrationComponent, LoginComponent, DashboardComponent, InventoryComponent, PagenotfoundComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [AuthserviceService]
+  providers: [AuthserviceService,AuthGuardGuard]
 })
 export class AppModule {}
 
