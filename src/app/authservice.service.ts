@@ -6,12 +6,9 @@ export class AuthserviceService {
   constructor() { }
 
  mainLogoutfunc()
-   {
-    localStorage.removeItem('is_login');
+   {  
     localStorage.removeItem('email');
-    localStorage.removeItem('username');
     localStorage.clear();
-
    }
    /*
    loginfunc(email,username)

@@ -72,11 +72,15 @@ datalist:any=datalist;
     var output = this.authserviceService.check_username_password(email, password);
     if(output == true)
     {
-      console.log('Loggedin');
+      //console.log('Loggedin');
+      alert('successfully login!');   
       this.router.navigate(['/dashboard']);
+      
     }
     else{
-      console.log('Invalid username or password');
+       alert('Invalid credential!');    
+       this.router.navigate(['/login']);     
+     
     }
   }
 
