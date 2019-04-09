@@ -28,6 +28,10 @@ checkmessage : string;
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
+       if(this.authserviceService.check_user_loggedin())
+       {
+          this.router.navigate(['/dashboard']);
+       }
    }
  // convenience getter for easy access to form fields
     get func() { return this.loginform.controls; }
@@ -39,21 +43,9 @@ checkmessage : string;
             return;
         }else
         {
-         //var email =this.loginform.value.email;
-         //var password =this.loginform.value.password;  
-         var formsdata=this.loginform.value;      
-        /*
-        var output = this.authserviceService.check_username_password(email, password);
-        if(output == true)
-        {      
-          alert('successfully login!');   
-          this.router.navigate(['/dashboard']);      
-        }
-        else{
-          alert('Invalid credential!');    
-          this.router.navigate(['/login']);           
-        }
-        */
+    
+      var formsdata=this.loginform.value;      
+      
       this.authserviceService.checkAuthentication(formsdata).subscribe( response =>
           {
                if(response){

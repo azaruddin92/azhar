@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms'; //validation
-
-
+import {Router} from '@angular/router';
+import { AuthserviceService } from '../authservice.service';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +14,7 @@ export class RegistrationComponent implements OnInit {
   submitted = false;
 /* validation  private formBuilder: FormBuilder*/
 
-  constructor(private formBuilder: FormBuilder) {   }
+  constructor(private formBuilder: FormBuilder,private router: Router,private authserviceService:AuthserviceService) {   }
 
     ngOnInit() {
         this.registerform = this.formBuilder.group({
@@ -22,6 +22,10 @@ export class RegistrationComponent implements OnInit {
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
+        if(this.authserviceService.check_user_loggedin())
+       {
+          this.router.navigate(['/dashboard']);
+       }
    }
 
  // convenience getter for easy access to form fields
