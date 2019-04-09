@@ -41,7 +41,7 @@ check_user_loggedin()
       }
   }  
 
-//checkAuthentication      
+//checkAuthentication login     
 checkAuthentication(postingdata: any): Observable<any> {  
   const  parameter = new  HttpParams().set('method', "login").set('data', JSON.stringify([{"email":postingdata.email,"password":postingdata.password}]));
 
@@ -60,6 +60,19 @@ checkAuthentication(postingdata: any): Observable<any> {
         })
     );
    } 
+userNewRegistration(registrationdata:any): Observable<any>{
+  const parameter=new HttpParams().set('method',"registration").set('data',JSON.stringify([{"email":registrationdata.email,"password":registrationdata.password,"username":registrationdata.username}]));
+  return this.http.post<any>(this.serviceurl,parameter).pipe(
+    map(response => {      
+       if(response)
+       {
+         return response;
+       }
+
+    })
+  );
+
+}
 
 
 }

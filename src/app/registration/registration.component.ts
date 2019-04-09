@@ -12,6 +12,7 @@ export class RegistrationComponent implements OnInit {
    /* validation */
   registerform: FormGroup;
   submitted = false;
+  
 /* validation  private formBuilder: FormBuilder*/
 
   constructor(private formBuilder: FormBuilder,private router: Router,private authserviceService:AuthserviceService) {   }
@@ -37,13 +38,21 @@ export class RegistrationComponent implements OnInit {
         if (this.registerform.invalid) {
             return;
         }else {
-         // console.log(this.registerform.value.username);
-          var username =this.registerform.value.username;
-          var email =this.registerform.value.email;
-          var password =this.registerform.value.password;
+               
+          var formsdata=this.registerform.value; 
 
+           this.authserviceService.userNewRegistration(formsdata).subscribe( response =>
+          {
+           console.log(response);
+           if(response && response.status==true)
+           {
+              this.checkmessage=response.message;
+           }
+          })
+        
 
-           alert('Registration form submitted!');  
+           //this.checkmessage='Invalid Credential !';
+          // alert('Registration form submitted!');  
         }
        
 }
