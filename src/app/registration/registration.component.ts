@@ -12,6 +12,9 @@ export class RegistrationComponent implements OnInit {
    /* validation */
   registerform: FormGroup;
   submitted = false;
+  checkmessage : string;
+  checkRegister = false;
+  checkerror=false;
   
 /* validation  private formBuilder: FormBuilder*/
 
@@ -45,16 +48,20 @@ export class RegistrationComponent implements OnInit {
           {
            console.log(response);
            if(response && response.status==true)
+           { 
+              this.checkRegister=true;
+              this.checkmessage=response.message;
+              this.router.navigate(['/login']);
+           }else
            {
+              this.checkerror=true;
               this.checkmessage=response.message;
            }
-          })
-        
+          })        
 
            //this.checkmessage='Invalid Credential !';
-          // alert('Registration form submitted!');  
-        }
-       
+           //alert('Registration form submitted!');  
+        }       
 }
 /* validation */
 
