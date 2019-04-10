@@ -51,7 +51,7 @@ export class RegistrationComponent implements OnInit {
            { 
               this.checkRegister=true;
               this.checkmessage=response.message;
-              this.router.navigate(['/login']);
+              //this.router.navigate(['/login']);
            }else
            {
               this.checkerror=true;

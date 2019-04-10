@@ -3,6 +3,7 @@ import {FormGroup, FormBuilder, Validators} from '@angular/forms'; //validation
 //import datalist  from '../assets/listdata.json';
 import {Router} from '@angular/router';
 import { AuthserviceService } from '../authservice.service';
+import  $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -52,8 +53,13 @@ checkmessage : string;
                   this.checkLogin = true;
                   this.router.navigate(['/dashboard']);
                }else{
-                  this.checkerror=true;
+                  this.checkerror=true;                
+                 
                   this.checkmessage='Invalid Credential !';
+               //  $('.alert').delay(4000).fadeOut(500);
+                //setTimeout(() => {     
+                 // }, 4000);
+             
                }
           });
         }
