@@ -73,6 +73,26 @@ userNewRegistration(registrationdata:any): Observable<any>{
   );
 
 }
+getProducts(): Observable<any>{
+   const parameter=new HttpParams().set('method',"getFeeds");
+
+ return this.http.post<any>(this.serviceurl,parameter).pipe(
+    map(response => {      console.log(response);
+       if(response)
+       {
+         return response;
+       }
+
+    })
+  );
+
+}
+
 
 
 }
+
+
+
+
+

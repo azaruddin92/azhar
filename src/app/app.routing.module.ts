@@ -7,7 +7,7 @@ import {DashboardComponent}   from './dashboard/dashboard.component';
 import {InventoryComponent}   from './inventory/inventory.component';
 import {PagenotfoundComponent}   from './pagenotfound/pagenotfound.component';
 import {AuthGuardGuard}   from './auth-guard.guard';
-
+import {FeedsComponent}   from './feeds/feeds.component';
  
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: 'login',  component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent,canActivate : [AuthGuardGuard]}, //, 
   {path: 'inventory', component: InventoryComponent},
+  {path: 'feeds', component: FeedsComponent},
   {path: '**', component: PagenotfoundComponent}, 
 
   

@@ -49,13 +49,15 @@ export class RegistrationComponent implements OnInit {
           {
           
            if(response && response.status==true)
-           {             
+           {  
+              this.checkerror=false;           
               this.checkErrorSuccess=true;
               this.checkmessage=response.message;                     
             
            }else
            {
               this.checkerror=true;
+              this.checkErrorSuccess=false;
               this.checkmessage=response.message;
            }
           })        
