@@ -53,12 +53,8 @@ checkmessage : string;
                   this.checkLogin = true;
                   this.router.navigate(['/dashboard']);
                }else{
-                  this.checkerror=true;                
-                 
-                  this.checkmessage='Invalid Credential !';
-               //  $('.alert').delay(4000).fadeOut(500);
-                //setTimeout(() => {     
-                 // }, 4000);
+                  this.checkerror=true;  
+                  this.checkmessage='Invalid Credential !';              
              
                }
           });

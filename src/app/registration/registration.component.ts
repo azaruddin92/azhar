@@ -52,17 +52,7 @@ export class RegistrationComponent implements OnInit {
            {             
               this.checkErrorSuccess=true;
               this.checkmessage=response.message;                     
-              this.registerform.reset();
-              
-              /*
-              this.registerform.reset({
-                  'username': '',
-                  'email': '',
-                  'password': '',     
-                });
-                */
             
-              //this.router.navigate(['/login']);
            }else
            {
               this.checkerror=true;
