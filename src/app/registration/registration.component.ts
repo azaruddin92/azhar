@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   checkmessage : string;
   checkRegister = false;
   checkerror=false;
+  checkErrorSuccess=false;
   
 /* validation  private formBuilder: FormBuilder*/
 
@@ -46,11 +47,21 @@ export class RegistrationComponent implements OnInit {
 
            this.authserviceService.userNewRegistration(formsdata).subscribe( response =>
           {
-           console.log(response);
+          
            if(response && response.status==true)
-           { 
-              this.checkRegister=true;
-              this.checkmessage=response.message;
+           {             
+              this.checkErrorSuccess=true;
+              this.checkmessage=response.message;                     
+              this.registerform.reset();
+              
+              /*
+              this.registerform.reset({
+                  'username': '',
+                  'email': '',
+                  'password': '',     
+                });
+                */
+            
               //this.router.navigate(['/login']);
            }else
            {
