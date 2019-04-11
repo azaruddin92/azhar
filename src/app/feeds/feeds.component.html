@@ -1,0 +1,20 @@
+<div class="">
+    <div class="container">
+        <div class="row">
+<div class="col-md-8 offset-md-3" *ngIf="responsedata">
+  <div   class="col-md-12"  *ngFor="let data of responsedata">
+  <div class="col-md-1">
+   <img src="{{data.image}}" width="50" height="auto">
+  </div><div class="col-md-11">
+   <h3 class="mt-0 feed_heading"><a href="{{data.slug}}" >{{data.title}}</a></h3>
+   <small><b>{{data.created_datetime}}</b></small>
+
+   <p>{{data.description.slice(0, 200)}}</p> 
+   <p><a href="{{data.slug}}" class="btn button btn-read_more">Read more</a></p>
+  </div>
+ </div>
+            </div>
+         </div>
+     </div>
+
+       </div>      

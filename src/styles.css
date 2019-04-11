@@ -3,5 +3,23 @@
 .invalid-feedback {
     color: red;
 }
-
-
+.mt-0 {
+  margin-top: 0 !important;
+}
+.feed_heading a{
+  text-decoration: none;
+}
+.btn-read_more{
+  background: #1976D2;
+padding: 7px;
+color: #ffffff;
+text-align: center;
+text-decoration: none;
+}
+.btn-read_more:hover{
+    background: #1976D2;
+padding: 7px;
+color: #ffffff;
+text-align: center;
+text-decoration: none;
+}

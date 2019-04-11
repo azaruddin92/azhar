@@ -11,6 +11,7 @@ import { AuthserviceService } from '../authservice.service';
   styleUrls: ['./feeds.component.css']
 })
 export class FeedsComponent implements OnInit {
+  responsedata:any;
   
 
   constructor(private router: Router,private authserviceService:AuthserviceService) { }
@@ -20,19 +21,20 @@ export class FeedsComponent implements OnInit {
        {
           this.router.navigate(['/dashboard']);
        }
+
+       this.authserviceService.getFeedsData().subscribe( response => {     
+        this.responsedata= response.data;       
+    });
       
 
   }
+
+  
    
-    getProducts() {
+
     
     
-    this.authserviceService.getProducts().subscribe( response => {
-     
-     console.log( response);
-     
-     
-    });
-  }
+  
+
 
 }
