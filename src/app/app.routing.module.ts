@@ -18,8 +18,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent,canActivate : [AuthGuardGuard]}, //, 
   {path: 'inventory', component: InventoryComponent},
   {path: 'feeds', component: FeedsComponent,canActivate : [AuthGuardGuard]},
-  {path: '**', component: PagenotfoundComponent}, 
   {path: 'feeds/:slug', component: FeedsdetailComponent},
+  {path: '**', component: PagenotfoundComponent}, 
 ];
 
 @NgModule({

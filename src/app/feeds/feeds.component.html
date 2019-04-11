@@ -6,11 +6,11 @@
   <div class="col-md-1">
    <img src="{{data.image}}" width="50" height="auto">
   </div><div class="col-md-11">
-   <h3 class="mt-0 feed_heading"><a href="{{data.slug}}" >{{data.title}}</a></h3>
+   <h3 class="mt-0 feed_heading"><a href="feeds/{{data.slug}}" >{{data.title}}</a></h3>
    <small><b>{{data.created_datetime}}</b></small>
 
    <p>{{data.description.length>250?((data.description.slice(0, 250))+"..."):data.description}}</p> 
-   <p><a href="{{data.slug}}" class="btn button btn-read_more">Read more</a></p>
+   <p><a href="'feeds/{{data.slug}}" class="btn button btn-read_more">Read more</a></p>
   </div>
  </div>
             </div>
