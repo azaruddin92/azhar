@@ -13,10 +13,12 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {AuthGuardGuard}   from './auth-guard.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedsComponent } from './feeds/feeds.component';
+import { FeedsdetailsComponent } from './feedsdetails/feedsdetails.component';
+import { FeedsdetailComponent } from './feedsdetail/feedsdetail.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpClientModule ],
-  declarations: [ AppComponent,  RegistrationComponent, LoginComponent, DashboardComponent, InventoryComponent, PagenotfoundComponent, FeedsComponent ],
+  declarations: [ AppComponent,  RegistrationComponent, LoginComponent, DashboardComponent, InventoryComponent, PagenotfoundComponent, FeedsComponent, FeedsdetailsComponent, FeedsdetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AuthserviceService,AuthGuardGuard]
 })
