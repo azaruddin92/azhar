@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'login',  component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent,canActivate : [AuthGuardGuard]}, //, 
   {path: 'inventory', component: InventoryComponent},
-  {path: 'feeds', component: FeedsComponent},
+  {path: 'feeds', component: FeedsComponent,canActivate : [AuthGuardGuard]},
   {path: '**', component: PagenotfoundComponent}, 
 
   

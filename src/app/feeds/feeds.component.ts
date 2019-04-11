@@ -16,11 +16,7 @@ export class FeedsComponent implements OnInit {
 
   constructor(private router: Router,private authserviceService:AuthserviceService) { }
 
-  ngOnInit() {
-       if(this.authserviceService.check_user_loggedin())
-       {
-          this.router.navigate(['/dashboard']);
-       }
+  ngOnInit() {       
 
        this.authserviceService.getFeedsData().subscribe( response => {     
         this.responsedata= response.data;       

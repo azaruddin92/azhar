@@ -11,6 +11,8 @@
       <a href="#"  routerLink="/login">Login</a></li>
     <li *ngIf="!authserviceService.check_user_loggedin()" role="presentation" routerLinkActive="active">
       <a href="#"  routerLink="/registration">Registration</a></li>
+       <li  *ngIf="authserviceService.check_user_loggedin()"  role="presentation" routerLinkActive="active">
+      <a href="#"  routerLink="/feeds">Feeds</a></li>
        <li *ngIf="authserviceService.check_user_loggedin()" role="presentation" routerLinkActive="active">
       <a href="#" (click)="authserviceService.mainLogoutfunc()">Logout</a></li>
   </ul>
