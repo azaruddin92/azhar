@@ -36,6 +36,14 @@ export class AuthserviceService {
       return false;
     }
   }
+  getLoggedinUserName()
+  {
+     if (localStorage.getItem('username')) {
+      return localStorage.getItem('username');
+    } else {
+      return false;
+    }
+  }
 
   //checkAuthentication login     
   checkAuthentication(postingdata: any): Observable<any> {
