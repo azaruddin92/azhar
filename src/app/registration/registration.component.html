@@ -4,7 +4,7 @@
                  <div class="page-header">
                 <h2>Registration form</h2>
      <div *ngIf="checkerror" class="alert alert-danger">{{checkmessage}}</div>
-     <div *ngIf="checkErrorSuccess" class="alert success alert-success">{{checkmessage}}</div>
+     <div *ngIf="checkErrorSuccess" class="alert success alert-success">{{checkmessage}}  <a href="#"  routerLink="/login">login here</a></div>
                  </div>
                 <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
                     <div class="form-group">

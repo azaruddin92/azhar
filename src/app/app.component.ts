@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class AppComponent  {
   name = 'Lemosys Web Developers';
   copyright = '@ 2019 Azhar';
+  username:any;
   
 
   
@@ -18,6 +19,12 @@ constructor(private authserviceService:AuthserviceService) {
 
   }
    ngOnInit() {
+
+  if(localStorage.getItem('email'))
+  {
+    this.username=localStorage.getItem('email');
+  }
+
    }
     
 }
