@@ -9,6 +9,7 @@ import {PagenotfoundComponent}   from './pagenotfound/pagenotfound.component';
 import {AuthGuardGuard}   from './auth-guard.guard';
 import {FeedsComponent}   from './feeds/feeds.component'; 
 import {FeedsdetailComponent}   from './feedsdetail/feedsdetail.component'; 
+import {ProfileComponent}   from './profile/profile.component'; 
 
  
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'inventory', component: InventoryComponent},
   {path: 'feeds', component: FeedsComponent,canActivate : [AuthGuardGuard]},
   {path: 'feeds/:slug', component: FeedsdetailComponent,canActivate : [AuthGuardGuard]},
+  {path: 'viewprofile', component: ProfileComponent,canActivate : [AuthGuardGuard]},
   {path: '**', component: PagenotfoundComponent}, 
 ];
  

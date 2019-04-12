@@ -45,6 +45,15 @@ export class AuthserviceService {
     }
   }
 
+    getUserProfileInformation()
+  {
+     if (localStorage.getItem('username')) {
+      return localStorage;
+    } else {
+      return false;
+    }
+  }
+
   //checkAuthentication login     
   checkAuthentication(postingdata: any): Observable<any> {
     const parameter = new HttpParams().set('method', "login").set('data', JSON.stringify([{ "email": postingdata.email, "password": postingdata.password }]));
