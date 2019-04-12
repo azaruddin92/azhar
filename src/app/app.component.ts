@@ -19,9 +19,9 @@ constructor(private authserviceService:AuthserviceService) {
 
   }
    ngOnInit() {
-    if(localStorage.getItem('email'))
+    if(localStorage.getItem('username'))
     {
-      this.username=localStorage.getItem('email');
+      this.username=localStorage.getItem('username');
     }
    }    
 }
