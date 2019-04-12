@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent,canActivate : [AuthGuardGuard]}, //, 
   {path: 'inventory', component: InventoryComponent},
   {path: 'feeds', component: FeedsComponent,canActivate : [AuthGuardGuard]},
-  {path: 'feeds/:slug', component: FeedsdetailComponent},
+  {path: 'feeds/:slug', component: FeedsdetailComponent,canActivate : [AuthGuardGuard]},
   {path: '**', component: PagenotfoundComponent}, 
 ];
 

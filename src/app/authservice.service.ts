@@ -73,7 +73,11 @@ export class AuthserviceService {
     const parameter = new HttpParams().set('method', "getFeeds");
     return this.http.post<any>(this.serviceurl, parameter);
   }
-
+  //getting feed Detail data
+  getFeedBySlugData(response:any): Observable<any> {
+       const parameter = new HttpParams().set('method', "getFeedBySlug").set('data', JSON.stringify([{ "slug": response}]));
+       return this.http.post<any>(this.serviceurl, parameter);
+  }
 
 
 }

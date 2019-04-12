@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
+import { AuthserviceService } from '../authservice.service';
 
 @Component({
   selector: 'app-feedsdetail',
@@ -8,12 +9,16 @@ import {Router,ActivatedRoute} from '@angular/router';
 })
 export class FeedsdetailComponent implements OnInit {
 slug:any;
-  constructor(private router:Router,private route: ActivatedRoute) { }
+responsedata:any;
+  constructor(private router:Router,private route: ActivatedRoute,private authserviceService:AuthserviceService) { }
 
   ngOnInit() 
   {
     var slug = this.route.snapshot.params.slug;
-    console.log(slug);
+       this.authserviceService.getFeedBySlugData(slug).subscribe( response => {     
+        this.responsedata= response.data;       
+    });
+  
   }
 
 }
