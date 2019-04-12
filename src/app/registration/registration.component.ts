@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms'; //validation
 import {Router} from '@angular/router';
 import { AuthserviceService } from '../authservice.service';
+import { MustMatch } from '../helpers/must-match.validator';
 
 @Component({
   selector: 'app-registration',
@@ -25,7 +26,10 @@ export class RegistrationComponent implements OnInit {
         this.registerform = this.formBuilder.group({
             username: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            password: ['', [Validators.required, Validators.minLength(6)]],
+            confirmpassword: ['', Validators.required]
+        }, {
+            validator: MustMatch('password', 'confirmpassword')
         });
         if(this.authserviceService.check_user_loggedin())
        {
@@ -34,7 +38,7 @@ export class RegistrationComponent implements OnInit {
    }
 
  // convenience getter for easy access to form fields
-    get f() { return this.registerform.controls; }
+    get func() { return this.registerform.controls; }
     onSubmit() {
         this.submitted = true;
 
