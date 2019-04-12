@@ -13,8 +13,6 @@ export class AppComponent  {
   copyright = '@ 2019 Azhar';
   username:any;
   
-
-  
 constructor(private authserviceService:AuthserviceService) { 
 
   }
