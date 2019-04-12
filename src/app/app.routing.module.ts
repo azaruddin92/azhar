@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'feeds/:slug', component: FeedsdetailComponent,canActivate : [AuthGuardGuard]},
   {path: '**', component: PagenotfoundComponent}, 
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
