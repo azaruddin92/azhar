@@ -3,7 +3,7 @@
   <h4 style="margin: 0;display: inline-block;vertical-align: sub;margin-left: 5px"> {{name}}
   </h4> 
 </header>
-
+ <div class="col-md-6 offset-md-3 pull-left">
   <ul class="nav nav-pills" style="margin-bottom: 20px;">
     <li  *ngIf="authserviceService.check_user_loggedin()"  role="presentation" routerLinkActive="active">
       <a href="#"  routerLink="/dashboard">Dashboard</a></li>
@@ -15,9 +15,13 @@
       <a href="#"  routerLink="/feeds">Feeds</a></li>
        <li *ngIf="authserviceService.check_user_loggedin()" role="presentation" routerLinkActive="active">
       <a href="#" (click)="authserviceService.mainLogoutfunc()">Logout</a></li>
-  </ul>
-  <p *ngIf="authserviceService.check_user_loggedin()">You are loggedin!<b> {{authserviceService.getLoggedinUserName()}}</b></p>
-<div>
+  </ul></div> <div class="col-md-6 offset-md-3">
+  <div *ngIf="authserviceService.check_user_loggedin()" class="p-t-20 pull-right">You are loggedin!  <b>Welcome  {{authserviceService.getLoggedinUserName()}}</b>
+    </div> 
+  </div> 
+  
+  
+<div class="col-md-12 offset-md-3">
   <router-outlet></router-outlet> 
  </div>
 </div>
